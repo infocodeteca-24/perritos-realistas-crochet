@@ -1,0 +1,253 @@
+/* ==========================================================
+   Perritos Realistas en amigurumi — estilos
+   Para cambiar los colores de toda la página, editá estas variables.
+   ========================================================== */
+:root {
+  --violeta: #24104F;      /* fondo oscuro y texto principal */
+  --violeta-2: #5B4B86;    /* texto secundario */
+  --lila: #E9E2FA;         /* texto claro sobre violeta */
+  --fucsia: #E0225F;       /* acento */
+  --fucsia-texto: #C2185B; /* acento para texto chico */
+  --amarillo: #FFD23F;     /* botones */
+  --amarillo-sombra: #C99A00;
+  --rosa: #FFF4F7;         /* fondo suave */
+  --crema: #FFF6D6;        /* fondo suave bonus */
+  --blanco: #FFFFFF;
+
+  --titulos: 'Baloo 2', 'Trebuchet MS', sans-serif;
+  --texto: 'Nunito Sans', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: var(--texto);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--violeta);
+  background: var(--blanco);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--fucsia-texto); }
+a:hover { color: #8E1043; }
+a:focus-visible, summary:focus-visible, button:focus-visible {
+  outline: 3px solid var(--fucsia);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 { margin: 0; }
+h1, h2 { font-family: var(--titulos); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.08; }
+h3 { font-size: 1.15rem; line-height: 1.3; }
+p { margin: 0; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.container--narrow { max-width: 800px; }
+.container--buy { max-width: 600px; }
+
+.muted { color: var(--violeta-2); font-size: 0.95rem; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 34px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn--yellow {
+  background: var(--amarillo);
+  color: var(--violeta);
+  box-shadow: 0 6px 0 var(--amarillo-sombra);
+}
+.btn--yellow:hover { color: var(--violeta); transform: translateY(-2px); box-shadow: 0 8px 0 var(--amarillo-sombra); }
+.btn--yellow:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--amarillo-sombra); }
+.btn--block { width: 100%; }
+.btn.is-pending { opacity: .85; }
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  background: var(--fucsia);
+  color: var(--blanco);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* ---------- Secciones ---------- */
+.section { padding: 64px 0; }
+.section h2 { margin-bottom: 24px; }
+.section__lead { margin: -12px 0 28px; }
+.section--pink { background: var(--rosa); }
+.section--yellow { background: var(--crema); }
+.section--dark { background: var(--violeta); color: var(--blanco); }
+.section--magenta { background: var(--fucsia); color: var(--blanco); }
+
+/* ---------- 1. Hero ---------- */
+.hero { background: var(--violeta); color: var(--blanco); padding: 52px 0 64px; }
+.hero__grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+.hero__text { flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px; }
+.hero h1 { font-size: clamp(2.3rem, 5.6vw, 3.8rem); line-height: 1.02; }
+.hero__lead { font-size: 1.18rem; color: var(--lila); max-width: 32em; }
+.hero__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; color: var(--lila); }
+.hero__text .btn { align-self: flex-start; }
+.hero__note { font-size: 0.95rem; color: #D6CCF2; }
+.hero__media { flex: 1 1 340px; display: flex; justify-content: center; }
+.hero__media img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+  transform: rotate(2deg);
+  box-shadow: -14px 14px 0 var(--fucsia);
+}
+
+.pill {
+  align-self: flex-start;
+  background: var(--amarillo);
+  color: var(--violeta);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.price { font-family: var(--titulos); font-weight: 800; line-height: 1; }
+.price--big { font-size: 3rem; color: var(--amarillo); }
+.price--xl { font-size: 3.4rem; }
+
+/* ---------- 2. Dolores ---------- */
+.pains { list-style: none; margin: 0; padding: 0; }
+.pains li { display: flex; gap: 16px; padding: 18px 0; border-bottom: 2px solid #FFE3EC; }
+.pains li:last-child { border-bottom: 0; }
+.icon {
+  flex: 0 0 auto; width: 26px; height: 26px; margin-top: 2px;
+  fill: none; stroke: var(--fucsia); stroke-width: 2.2; stroke-linecap: round;
+}
+
+/* ---------- 3. Beneficios ---------- */
+.benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 28px; }
+.benefit { display: flex; flex-direction: column; gap: 8px; }
+.benefit p { color: var(--lila); }
+.check {
+  width: 30px; height: 30px;
+  fill: none; stroke: var(--amarillo); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ---------- 4. Producto ---------- */
+.product { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
+.product__media { flex: 1 1 320px; display: flex; justify-content: center; }
+.product__media img { width: 100%; max-width: 420px; }
+.product__text { flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; }
+.product__text h2 { margin-bottom: 0; }
+.features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.features li { display: flex; gap: 12px; align-items: flex-start; }
+.dot {
+  flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--amarillo); font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.dot svg { width: 16px; height: 16px; fill: none; stroke: var(--violeta); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- 6. Bonus ---------- */
+.bonuses { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+.bonus {
+  padding: 24px; background: var(--blanco);
+  border: 3px solid var(--violeta); border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--violeta);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.bonus__tag { font-weight: 800; color: var(--fucsia-texto); }
+
+/* ---------- Compra y garantía ---------- */
+.buy .container { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.buy h2 { margin-bottom: 0; }
+.buy__card {
+  width: 100%; background: var(--blanco); color: var(--violeta);
+  border-radius: 24px; padding: 30px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  box-shadow: 10px 10px 0 var(--fucsia);
+}
+.buy__name { font-weight: 800; }
+.guarantee { display: flex; gap: 14px; align-items: center; text-align: left; }
+.guarantee svg {
+  flex: 0 0 auto; width: 42px; height: 42px;
+  fill: none; stroke: var(--amarillo); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.guarantee p { color: var(--lila); font-size: 0.98rem; }
+.guarantee strong { color: var(--blanco); }
+
+/* ---------- 7. Testimonios ---------- */
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.review {
+  margin: 0; padding: 24px; background: var(--blanco);
+  border: 3px solid var(--fucsia); border-radius: 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.review p { font-size: 1.1rem; }
+.review footer { font-size: 0.92rem; color: var(--violeta-2); }
+
+.study {
+  margin-top: 28px; background: var(--violeta); color: var(--blanco);
+  border-radius: 22px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.study h3 { font-family: var(--titulos); font-size: 1.5rem; line-height: 1.15; }
+.study__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.study__stats div { display: flex; flex-direction: column; gap: 4px; color: var(--lila); }
+.study__num { font-family: var(--titulos); font-size: 3rem; font-weight: 800; line-height: 1; color: var(--amarillo); }
+.study__source { font-size: 0.88rem; color: #D6CCF2; }
+
+/* ---------- 8. Preguntas frecuentes ---------- */
+.faq details { border-bottom: 2px solid #EFE7FF; padding: 16px 0; }
+.faq details:last-child { border-bottom: 0; }
+.faq summary {
+  cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  min-height: 32px; font-weight: 800;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq__plus { font-size: 1.6rem; color: var(--fucsia); transition: transform .2s; }
+.faq details[open] .faq__plus { transform: rotate(45deg); }
+.faq details p { margin-top: 10px; }
+
+/* ---------- Cierre ---------- */
+.closing { text-align: center; padding: 56px 0 72px; }
+.closing .container { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.closing h2 { margin-bottom: 0; }
+.closing p { font-size: 0.95rem; }
+
+/* ---------- Pie ---------- */
+.footer { background: var(--violeta); color: #D6CCF2; padding: 28px 0; text-align: center; font-size: 0.9rem; }
+.footer a { color: var(--amarillo); }
+.footer p + p { margin-top: 6px; }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-float {
+  position: fixed; right: 18px; bottom: 18px; z-index: 50;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366; color: var(--blanco);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+.wa-float[hidden] { display: none; }
+.wa-float svg { width: 30px; height: 30px; fill: currentColor; }
+.wa-float:hover { color: var(--blanco); transform: scale(1.05); }
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .section { padding: 52px 0; }
+  .hero__text .btn { align-self: stretch; }
+  .hero__media img { box-shadow: -10px 10px 0 var(--fucsia); }
+  .price--xl { font-size: 3rem; }
+}
